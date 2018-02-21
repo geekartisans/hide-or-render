@@ -56,7 +56,7 @@ class Row extends PureComponent {
       (value) => {
         value === ''
       ?
-        this.row.className = 'row show'
+        (this.row.className !== 'row show') &&  (this.row.className = 'row show' )
       :
         (
           first_name.indexOf(value) !== -1 ||
@@ -64,9 +64,9 @@ class Row extends PureComponent {
           ip_address.indexOf(value) !== -1 ||
           email.indexOf(value) !== -1
           ?
-            this.row.className = 'row show'
+            (this.row.className !== 'row show') &&  (this.row.className = 'row show' )
           :
-            this.row.className = 'row hide'
+          (this.row.className !== 'row hide') &&  (this.row.className = 'row hide' )
         );
       }
     );
